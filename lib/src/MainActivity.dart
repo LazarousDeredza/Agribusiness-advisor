@@ -567,7 +567,7 @@ class MainActivity extends StatelessWidget {
     return Column(
       children: [
         Text(
-          'Agri-Business Advisor',
+          'Agro-Ecology Advisor',
           style: TextStyle(
             fontSize: 28,
             color: Colors.green[900],

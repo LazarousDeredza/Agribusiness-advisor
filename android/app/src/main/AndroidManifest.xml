@@ -3,7 +3,7 @@
 <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
     <application
-        android:label="Agri_Business Advisor"
+        android:label="Agro-Ecology Advisor"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
