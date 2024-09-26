@@ -450,10 +450,12 @@ class MainActivity extends StatelessWidget {
       ),
       drawer: _buildDrawer(context),
       body: Container(
+         height:MediaQuery.of(context).size.height,
         decoration: BoxDecoration(
           image: DecorationImage(
             image: AssetImage('assets/background5.jpg'),
             fit: BoxFit.cover,
+           
             colorFilter: ColorFilter.mode(
                 Colors.green.withOpacity(0.2), BlendMode.darken),
           ),

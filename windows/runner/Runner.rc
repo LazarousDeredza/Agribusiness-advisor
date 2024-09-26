@@ -89,11 +89,11 @@ BEGIN
     BEGIN
         BLOCK "040904e4"
         BEGIN
-            VALUE "CompanyName", "com.example" "\0"
+            VALUE "CompanyName", "com.agri" "\0"
             VALUE "FileDescription", "agri_business_advisor" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
             VALUE "InternalName", "agri_business_advisor" "\0"
-            VALUE "LegalCopyright", "Copyright (C) 2024 com.example. All rights reserved." "\0"
+            VALUE "LegalCopyright", "Copyright (C) 2024 com.agri. All rights reserved." "\0"
             VALUE "OriginalFilename", "agri_business_advisor.exe" "\0"
             VALUE "ProductName", "agri_business_advisor" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
