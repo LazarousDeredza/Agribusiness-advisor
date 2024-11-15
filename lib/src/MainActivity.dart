@@ -1,438 +1,44 @@
-// import 'package:agri_business_advisor/src/BeePage.dart';
-// import 'package:agri_business_advisor/src/LoginScreen.dart';
-// import 'package:agri_business_advisor/src/ModelFarmer.dart';
-// import 'package:agri_business_advisor/src/Mushroom.dart';
-// import 'package:flutter/material.dart';
-// import 'package:url_launcher/url_launcher.dart';  // Add this package to handle URL launching
-
-// class MainActivity extends StatelessWidget {
-//   @override
-//   Widget build(BuildContext context) {
-//     double width =MediaQuery.of(context).size.width;
-//     return Scaffold(
-//       appBar: AppBar(
-//         title: Text('Agri-Business Advisor'),
-//       ),
-//       drawer: Drawer(
-//         child: ListView(
-//           padding: EdgeInsets.zero,
-//           children: <Widget>[
-//             UserAccountsDrawerHeader(
-//               accountName: Text('First & Last Name'),
-//               accountEmail: Text('User Email'),
-//               currentAccountPicture: CircleAvatar(
-//                 backgroundImage: AssetImage('assets/bee1.jpg'),
-//               ),
-//             ),
-//             ListTile(
-//               leading: Icon(Icons.home),
-//               title: Text('Home'),
-//               onTap: () {
-//                 Navigator.pop(context);
-//               },
-//             ),
-//             ListTile(
-//               leading: Icon(Icons.settings),
-//               title: Text('Settings'),
-//               onTap: () {
-//                 Navigator.pop(context);
-//               },
-//             ),
-//             ListTile(
-//               leading: Icon(Icons.logout),
-//               title: Text('Logout'),
-//               onTap: () {
-//                 Navigator.pushReplacement(
-//                   context,
-//                   MaterialPageRoute(builder: (context) => LoginActivity()),
-//                 );
-//               },
-//             ),
-//           ],
-//         ),
-//       ),
-    
-//       body: Container(
-//          decoration: BoxDecoration(
-//           image: DecorationImage(
-//             image: AssetImage('assets/background2.jpg'),
-//             fit: BoxFit.cover,
-//           ), 
-//         ),
-
-//         child: SingleChildScrollView(
-        
-//           physics: BouncingScrollPhysics(),
-//           child: Column(
-        
-//             crossAxisAlignment: CrossAxisAlignment.center,
-//             children: [
-//               SizedBox(height: 20),
-//               Text(
-//                 'Agri-Business Advisor',
-//                 style: TextStyle(
-//                   fontSize: 25,
-//                   color: Colors.brown[200],
-//                   fontWeight: FontWeight.bold,
-//                 ),
-//                 textAlign: TextAlign.center,
-//               ),
-//               SizedBox(height: 10),
-//               Text(
-//                 'We Are Here to help you make the best out of your farm',
-//                 style: TextStyle(
-//                   fontSize: 18,
-//                   color: Colors.brown[200],
-//                 ),
-//                 textAlign: TextAlign.center,
-//               ),
-//               SizedBox(height: 20),
-        
-//               // Mushroom Card
-//               Card(
-//                 shape: RoundedRectangleBorder(
-//                   borderRadius: BorderRadius.circular(15),
-//                 ),
-//                 child: GestureDetector(
-//                   onTap: () {
-//                       Navigator.push(
-//                   context,
-//                   MaterialPageRoute(builder: (context) => Mushroom()),
-//                 );
-//                   },
-//                   child: Container(
-//                     padding: EdgeInsets.all(10),
-//                     width: width,
-//                     decoration: BoxDecoration(
-//                      gradient: LinearGradient(
-//                         colors: [Color(0xFFFF416C), Color(0xFF8A52E9)],
-//                         begin: Alignment.topLeft,
-//                         end: Alignment.bottomRight,
-//                       ),
-//                       borderRadius: BorderRadius.circular(15),
-//                     ),
-//                     child: Column(
-//                       crossAxisAlignment: CrossAxisAlignment.start,
-//                       children: [
-//                         Text(
-//                           'Mushroom',
-//                           style: TextStyle(
-//                             fontSize: 18,
-//                             fontWeight: FontWeight.bold,
-//                             color: Colors.white,
-//                           ),
-//                         ),
-//                         SizedBox(height: 5),
-//                         Text(
-//                           'Mushroom Production,\nfor beginners',
-//                           style: TextStyle(color: Colors.white),
-//                         ),
-//                         SizedBox(height: 10),
-//                         Image.asset(
-//                           'assets/onlinepngtools.png',
-//                           height: 90,
-//                           fit: BoxFit.cover,
-//                         ),
-//                       ],
-//                     ),
-//                   ),
-//                 ),
-//               ),
-//               SizedBox(height: 10),
-        
-//               // Bee Keeping Card
-//               Card(
-//                 shape: RoundedRectangleBorder(
-//                   borderRadius: BorderRadius.circular(15),
-//                 ),
-//                 child: GestureDetector(
-//                   onTap: () {
-//                          Navigator.push(
-//                   context,
-//                   MaterialPageRoute(builder: (context) => BeeKeeping()),
-//                 );
-//                   },
-//                   child: Container(
-//                     padding: EdgeInsets.all(10),
-//                       width: width,
-//                     decoration: BoxDecoration(
-//                       gradient: LinearGradient(
-//                         colors: [Color(0xFF4DB6AC), Color(0xFF009688), Color(0xFF00695C)],
-//                         begin: Alignment.topLeft,
-//                         end: Alignment.bottomRight,
-//                         stops: [0.0, 0.5, 1.0],
-//                       ),
-//                       borderRadius: BorderRadius.circular(15),
-//                     ),
-//                     child: Column(
-//                       crossAxisAlignment: CrossAxisAlignment.start,
-//                       children: [
-//                         Text(
-//                           'Bee Keeping With Katie Lloyd',
-//                           style: TextStyle(
-//                             fontSize: 18,
-//                             fontWeight: FontWeight.bold,
-//                             color: Colors.white,
-//                           ),
-//                         ),
-//                         SizedBox(height: 5),
-//                         Text(
-//                           'Study nature, love nature,\nand be the best bee keeper',
-//                           style: TextStyle(color: Colors.white),
-//                         ),
-//                         SizedBox(height: 10),
-//                         Image.asset(
-//                           'assets/onlinepngtools1.png',
-//                           height: 90,
-//                           fit: BoxFit.cover,
-//                         ),
-//                       ],
-//                     ),
-//                   ),
-//                 ),
-//               ),
-//               SizedBox(height: 10),
-        
-//               // Model Farmer Card
-//               Card(
-//                 shape: RoundedRectangleBorder(
-//                   borderRadius: BorderRadius.circular(15),
-//                 ),
-//                 child: GestureDetector(
-//                     onTap: () {
-//                          Navigator.push(
-//                   context,
-//                   MaterialPageRoute(builder: (context) => ModelFarmer()),
-//                 );
-//                   },
-//                   child: Container(
-//                     padding: EdgeInsets.all(10),
-//                       width: width,
-//                     decoration: BoxDecoration(
-//                     gradient: LinearGradient(
-//                         colors: [Color(0xFFFF416C), Color(0xFF8A52E9)],
-//                         begin: Alignment.topLeft,
-//                         end: Alignment.bottomRight,
-//                       ),
-//                       borderRadius: BorderRadius.circular(15),
-//                     ),
-//                     child: Column(
-//                       crossAxisAlignment: CrossAxisAlignment.start,
-//                       children: [
-//                         Text(
-//                           'Model Farmer',
-//                           style: TextStyle(
-//                             fontSize: 18,
-//                             fontWeight: FontWeight.bold,
-//                             color: Colors.white,
-//                           ),
-//                         ),
-//                         SizedBox(height: 5),
-//                         Text(
-//                           'Get the best info,\non model farming',
-//                           style: TextStyle(color: Colors.white),
-//                         ),
-//                         SizedBox(height: 10),
-//                         Image.asset(
-//                           'assets/onlinepngtools6.png',
-//                           height: 90,
-//                           fit: BoxFit.cover,
-//                         ),
-//                       ],
-//                     ),
-//                   ),
-//                 ),
-//               ),
-//               SizedBox(height: 10),
-        
-//               // Get Involved Card
-//               Card(
-//                 shape: RoundedRectangleBorder(
-//                   borderRadius: BorderRadius.circular(15),
-//                 ),
-//                 child: Container(
-//                   padding: EdgeInsets.all(10),
-//                   decoration: BoxDecoration(
-//                    gradient: LinearGradient(
-//                       colors: [Color(0xFF4DB6AC), Color(0xFF009688), Color(0xFF00695C)],
-//                       begin: Alignment.topLeft,
-//                       end: Alignment.bottomRight,
-//                       stops: [0.0, 0.5, 1.0],
-//                     ),
-//                     borderRadius: BorderRadius.circular(15),
-//                   ),
-//                   child: Column(
-//                     crossAxisAlignment: CrossAxisAlignment.center,
-//                     children: [
-//                       Text(
-//                         'Contact Info',
-//                         style: TextStyle(
-//                           fontSize: 18,
-//                           fontWeight: FontWeight.bold,
-//                           color: Colors.white,
-//                         ),
-//                         textAlign: TextAlign.center,
-//                       ),
-//                       SizedBox(height: 15),
-//                       SingleChildScrollView(
-//                         scrollDirection: Axis.horizontal,
-//                         child: Row(
-//                           mainAxisAlignment: MainAxisAlignment.center,
-//                           children: [
-//                            _buildContactInfo(
-//                               "assets/phone.jpg",
-//                               'Phone',
-//                               '+263 776 348 601',
-//                               () => _callMe(),
-//                             ),
-//                             SizedBox(width: 10),
-//                             _buildContactInfo(
-//                              "assets/email.png",
-//                               'Email',
-//                               'rimaafrika4@gmail.com',
-//                               () => _emailMe(),
-//                             ),
-//                             SizedBox(width: 10),
-//                             _buildContactInfo(
-//                               "assets/whatsapp.png",
-//                               'WhatsApp',
-//                               '+263 776 348 601',
-//                               () => _sendWhatsapp(),
-//                             ),
-//                             SizedBox(width: 10),
-//                             _buildContactInfo(
-//                               "assets/twitter.png",
-//                               'Twitter',
-//                               '@AfrikaRima',
-//                               () => _goToTwitter(),
-//                             ),
-//                              SizedBox(width: width/4), //
-//                           ],
-//                         ),
-//                       ),
-//                     ],
-//                   ),
-//                 ),
-//               ),
-//             ],
-//           ),
-//         ),
-//       ),
-//       floatingActionButton: FloatingActionButton(
-//         onPressed: () {
-//           _showFABMenu(context);
-//         },
-//         child: Icon(Icons.more_vert_outlined),
-//       ),
-//     );
-//   }
-//  Widget _buildContactInfo(String url, String label, String content, VoidCallback onTap) {
-//     return GestureDetector(
-//       onTap: onTap,
-//       child: Column(
-//         children: [
-//           Image.asset(url,width: 30,),
-//           SizedBox(height: 5),
-//           Text(
-//             label,
-//             style: TextStyle(color: Colors.white),
-//           ),
-//           Text(
-//             content,
-//             style: TextStyle(color: Colors.white),
-//           ),
-//         ],
-//       ),
-//     );
-//   }
-
-//   void _launchURL(String url) async {
-//     if (await canLaunch(url)) {
-//       await launch(url);
-//     } else {
-//       throw 'Could not launch $url';
-//     }
-//   }
-
-//   void _callMe() {
-//     _launchURL("tel:+263776348601");
-//   }
-
-//   void _sendWhatsapp() {
-//     _launchURL("https://api.whatsapp.com/send?phone=263776348601");
-//   }
-
-//   void _emailMe() {
-//     _launchURL("mailto:rimaafrika4@gmail.com");
-//   }
-
-//   void _goToTwitter() {
-//     _launchURL("https://twitter.com/AfrikaRima");
-//   }
-//   void _showFABMenu(BuildContext context) {
-//     showModalBottomSheet(
-//       context: context,
-//       builder: (context) {
-//         return Wrap(
-//           children: <Widget>[
-//             ListTile(
-//               leading: Icon(Icons.person),
-//               title: Text('Profile'),
-//               onTap: () {
-//                 Navigator.pop(context);
-//                 ScaffoldMessenger.of(context).showSnackBar(
-//                   SnackBar(content: Text('Profile clicked')),
-//                 );
-//               },
-//             ),
-//             ListTile(
-//               leading: Icon(Icons.settings),
-//               title: Text('Settings'),
-//               onTap: () {
-//                 Navigator.pop(context);
-//                 ScaffoldMessenger.of(context).showSnackBar(
-//                   SnackBar(content: Text('Settings clicked')),
-//                 );
-//               },
-//             ),
-//             ListTile(
-//               leading: Icon(Icons.help),
-//               title: Text('Help'),
-//               onTap: () {
-//                 Navigator.pop(context);
-//                 ScaffoldMessenger.of(context).showSnackBar(
-//                   SnackBar(content: Text('Help clicked')),
-//                 );
-//               },
-//             ),
-//             ListTile(
-//               leading: Icon(Icons.logout),
-//               title: Text('Logout'),
-//               onTap: () {
-//                 Navigator.pop(context);
-//                 Navigator.pushReplacement(
-//                   context,
-//                   MaterialPageRoute(builder: (context) => LoginActivity()),
-//                 );
-//               },
-//             ),
-//           ],
-//         );
-//       },
-//     );
-//   }
-// }
-
-
-
 import 'package:agri_business_advisor/src/BeePage.dart';
 import 'package:agri_business_advisor/src/LoginScreen.dart';
 import 'package:agri_business_advisor/src/ModelFarmer.dart';
 import 'package:agri_business_advisor/src/Mushroom.dart';
+import 'package:agri_business_advisor/src/ProfilePage.dart';
+import 'package:agri_business_advisor/src/SettingsPage.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'DatabaseHelper.dart';
+import 'dart:io';
 
-class MainActivity extends StatelessWidget {
+class MainActivity extends StatefulWidget {
+  const MainActivity({super.key});
+
+  @override
+  State<MainActivity> createState() => _MainActivityState();
+}
+
+class _MainActivityState extends State<MainActivity> {
+
+
+
+String? displayName;
+  String? email;
+  String? imagePath;
+
+  @override
+  void initState() {
+    super.initState();
+    _loadProfile();
+  }
+
+  Future<void> _loadProfile() async {
+    final profile = await DatabaseHelper().getProfile();
+    setState(() {
+      displayName = profile?['name'] ?? 'Guest User';
+      email = profile?['email'] ?? 'guest@example.com';
+       imagePath = profile?['imagePath']; // Get the image path from DB
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
@@ -523,12 +129,16 @@ class MainActivity extends StatelessWidget {
       child: ListView(
         padding: EdgeInsets.zero,
         children: <Widget>[
-          UserAccountsDrawerHeader(
-            accountName: Text('John Doe'),
-            accountEmail: Text('john.doe@example.com'),
-            currentAccountPicture: CircleAvatar(
-              backgroundImage: AssetImage('assets/profile_blank.png'),
-            ),
+         UserAccountsDrawerHeader(
+            accountName: Text(displayName ?? 'Loading...'),
+            accountEmail: Text(email ?? 'Loading...'),
+            currentAccountPicture: imagePath != null
+                ? CircleAvatar(
+                    backgroundImage: FileImage(File(imagePath!)), // Load image from local file system
+                  )
+                : CircleAvatar(
+                    backgroundImage: AssetImage('assets/profile_blank.png'),
+                  ),
             decoration: BoxDecoration(
               color: Colors.green[700],
             ),
@@ -536,12 +146,24 @@ class MainActivity extends StatelessWidget {
           _buildDrawerItem(
             icon: Icons.home,
             text: 'Home',
-            onTap: () => Navigator.pop(context),
+            onTap: (){
+               Navigator.pop(context);
+               Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => MainActivity()),
+            );
+            } 
           ),
           _buildDrawerItem(
             icon: Icons.settings,
             text: 'Settings',
-            onTap: () => Navigator.pop(context),
+            onTap: (){
+  Navigator.pop(context);
+               Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => SettingsPage()),
+            );
+            }
           ),
           _buildDrawerItem(
             icon: Icons.logout,
@@ -766,9 +388,12 @@ class MainActivity extends StatelessWidget {
               title: Text('Profile'),
               onTap: () {
                 Navigator.pop(context);
-                ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(content: Text('Profile option selected')),
-                );
+ Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => ProfilePage()),
+            );
+
+
               },
             ),
             ListTile(
@@ -776,9 +401,13 @@ class MainActivity extends StatelessWidget {
               title: Text('Settings'),
               onTap: () {
                 Navigator.pop(context);
-                ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(content: Text('Settings option selected')),
-                );
+                
+                 Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => SettingsPage()),
+            );
+
+               
               },
             ),
             ListTile(
